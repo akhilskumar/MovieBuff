@@ -1,7 +1,14 @@
-﻿@model MovieBuff.Models.Movies
+﻿@model MovieBuff.ViewModels.RandomMoviesViewModel
 @{
     ViewBag.Title = "Movie";
 }
 
-<h2>@Model.MovieName</h2>
+<h2>@Model.Movies.MovieName</h2>
 
+
+<ul>
+    @foreach(var item in Model.Customers)
+    {
+        <li>@item.CustomerName</li>
+    }
+</ul>

@@ -1,4 +1,5 @@
 ﻿using MovieBuff.Models;
+using MovieBuff.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,25 @@ namespace MovieBuff.Controllers
 {
     public class HomeController : Controller
     {
+
         // GET: Home
         public ActionResult Movie()
         {
-            Movies movies = new Movies {MovieName="Sherk" };
+            var movies = new Movies {MovieName="Sherk" };
+            var customers = new List<Customers>
+            {
+                new Customers{CustomerName="Akhil" },
+                new Customers{CustomerName="Achu"}
+            };
+
+            var viewModel = new RandomMoviesViewModel
+            {
+                Movies = movies,
+                 Customers = customers
+            };
               
             
-            return View(movies);
+            return View(viewModel);
         }
 
         public ActionResult Edit(string id)
