@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieBuff.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,8 +12,10 @@ namespace MovieBuff.Controllers
         // GET: Home
         public ActionResult Movie()
         {
-
-            return View();
+            Movies movies = new Movies {MovieName="Sherk" };
+              
+            
+            return View(movies);
         }
     }
 }
