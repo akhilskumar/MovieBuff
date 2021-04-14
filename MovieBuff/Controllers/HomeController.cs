@@ -35,7 +35,7 @@ namespace MovieBuff.Controllers
             }
             return Content(string.Format("Page Index={0} & sortBy={1}", pageIndex, sortby));
         }
-
+        [Route("Home/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
         public ActionResult ByReleasedDate(int year,int month)
         {
             return Content(year + "/ " + month);

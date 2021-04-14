@@ -13,11 +13,14 @@ namespace MovieBuff
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                "ReleaseByYear",
-                "Home/release/{year}/{month}",
-                new { Controller = "Home", Action = "ByReleasedDate" },
-                new { year=@"\d{4}",month=@"\d{2}"});
+            routes.MapMvcAttributeRoutes();
+
+
+            //routes.MapRoute(
+            //    "ReleaseByYear",
+            //    "Home/release/{year}/{month}",
+            //    new { Controller = "Home", Action = "ByReleasedDate" },
+            //    new { year=@"\d{4}",month=@"\d{2}"});
 
             routes.MapRoute(
                 name: "Default",
